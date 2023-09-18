@@ -8,7 +8,7 @@ const Users = () => {
   // state ---> loader
   // useEffect
   // fetch ----> set state --
-  console.log(users);
+  //   console.log(users);
   return (
     <div>
       <h2>Our Users: {users.length}</h2>
