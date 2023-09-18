@@ -1,12 +1,17 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Post = ({ post }) => {
   const { id, body, title } = post;
+  const navigate = useNavigate();
   const postStyle = {
     padding: "10px",
     border: "2px solid purple",
     borderRadius: " 8px",
+  };
+
+  const handleShowDetails = () => {
+    navigate(`/post/${id}`);
   };
   return (
     <div style={postStyle}>
@@ -16,6 +21,7 @@ const Post = ({ post }) => {
       <Link to={`/post/${id}`}>
         <button>See Details</button>
       </Link>
+      <button onClick={handleShowDetails}>See Post Details</button>
     </div>
   );
 };
